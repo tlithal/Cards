@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card CRUD Application</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container">
+
+    <div id="newCard" class="card text-center">
+        <div class="card-header">
+            <h1>New Card</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <input type="text" id="cardName" class="form-control" placeholder="Name" aria-label="Card Name">
+                </div>
+                <div class="col">
+                    <input type="text" id="cardElement" class="form-control" placeholder="Element" aria-label="Card Element">
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col">
+                    <select class="form-select" id="cardRarity" aria-label="Card Rarity">
+                        <option value="" selected disabled>Rarity</option>
+                        <option value="R">R</option>
+                        <option value="SR">SR</option>
+                        <option value="SSR">SSR</option>
+                        <option value="UR">UR</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-select" id="cardRole" aria-label="Card Role">
+                        <option value="" selected disabled>Role</option>
+                        <option value="Attacker">Attacker</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Supporter">Supporter</option>
+                    </select>
+                </div>
+            </div><br>
+            <button type="submit" id="createCard" class="btn btn-primary">Submit</button>
+            <!-- <button type="submit" id="showCards" class="btn btn-primary" onclick="Display.getAllCards()">Show</button> -->
+        </div>
+    </div><br><br>
+
+    <div id="display">
+
+    </div>
+    
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="app.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>
