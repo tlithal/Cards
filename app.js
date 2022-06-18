@@ -1,4 +1,8 @@
+//URL for the API
+
 const baseURL = "https://62acffd39fa81d00a7bc1844.mockapi.io";
+
+//Create Card button
 
 let cardButton = document.querySelector('#createCard');
 
@@ -28,7 +32,12 @@ class Card {
 }
 
 class Display {
+
+    //Array that will hold all the cards that are pulled from the GET request
+
     static cards;
+
+    //PUT request
 
     static updateCard(id) {
         for(let card of this.cards) {
@@ -69,6 +78,8 @@ class Display {
 
     }
 
+    //Delete request
+
     static deleteCard(id) {
         for(let card of this.cards) {
             if(card.id == id) {
@@ -80,6 +91,8 @@ class Display {
         }
     }
 
+
+    //POST request
 
     static createCard(name, element, rarity, role) {
        fetch(`${baseURL}/cards`, {
@@ -97,11 +110,15 @@ class Display {
       .then( () => this.getAllCards() )
     }
 
+    //GET Request method
+
     static getAllCards() {
         fetch(`${baseURL}/cards`)
             .then(res => res.json())
             .then((cards) => this.render(cards))
     }
+
+    //Method that will display all the cards from the get request onto the HTML
 
     static render(cards) {
         this.cards = cards;
